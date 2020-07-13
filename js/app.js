@@ -1,3 +1,5 @@
+const t0 = performance.now();
+
 /**
  *
  * Manipulating the DOM exercise.
@@ -64,6 +66,15 @@ function setActive() {
 }
 
 // Scroll to anchor ID using scrollTO event
+function scrollTO(e) {
+  e.preventDefault();
+  if (e.target.classList.contains('menu__link')) {
+    let section = document.querySelector(e.target.hash);
+    section.scrollIntoView({
+      behavior: 'smooth',
+    });
+  }
+}
 
 /**
  * End Main Functions
@@ -75,6 +86,10 @@ function setActive() {
 document.addEventListener('DOMContentLoaded', buildNav);
 
 // Scroll to section on link click
+navbarList.addEventListener('click', scrollTO);
 
 // Set sections as active
 document.addEventListener('scroll', setActive);
+
+const t1 = performance.now();
+console.log(`App took ${t1 - t0} milliseconds.`);
