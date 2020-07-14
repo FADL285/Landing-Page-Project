@@ -32,7 +32,9 @@ For specific, detailed instructions, look at the project instructions in the Uda
 
 ## Development
 
-To launch this website, simply clone the repo and open the `index.html` file in the browser, or run
+To launch this website, simply clone the repo and open the `index.html` file in the browser.
+
+Or run
 `npx http-server -c-1 -o` to run a local development server with no-cache
 
 Enjoy!
