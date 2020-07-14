@@ -1,5 +1,3 @@
-const t0 = performance.now();
-
 /**
  *
  * Manipulating the DOM exercise.
@@ -14,7 +12,8 @@ const t0 = performance.now();
  * JS Standard: ESlint
  *
  */
-
+// Start time
+const t0 = performance.now();
 /**
  * Define Global Variables
  *
@@ -105,7 +104,11 @@ document.addEventListener('scroll', setActive);
 // Hide navbar while not scrolling
 document.addEventListener('scroll', hideNav);
 
+/**
+ * End Events
+ *
+ */
+
+// End time
 const t1 = performance.now();
 console.log(`App took ${t1 - t0} milliseconds.`);
-
-document.addEventListener('scroll', hideNav);
