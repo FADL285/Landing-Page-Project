@@ -105,6 +105,11 @@ section {
   top: 0;
   width: 100%;
   z-index: 5;
+  transition: all ease-in-out 1s;
+}
+
+.page__header.hidden {
+  top: -100%
 }
 
 /* Footer Styles */
