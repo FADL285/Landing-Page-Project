@@ -19,16 +19,13 @@ const t0 = performance.now();
  * Define Global Variables
  *
  */
+const pageHeader = document.querySelector('.page__header');
 const navbarList = document.getElementById('navbar__list');
 const sections = document.querySelectorAll('section');
+let isScrolling;
 /**
  * End Global Variables
- * Start Helper Functions
  *
- */
-
-/**
- * End Helper Functions
  * Begin Main Functions
  *
  */
@@ -76,6 +73,20 @@ function scrollTO(e) {
   }
 }
 
+// Hide fixed navigation bar while not scrolling
+function hideNav() {
+  clearTimeout(isScrolling);
+  if (pageHeader.classList.contains('hidden')) {
+    pageHeader.classList.remove('hidden');
+  }
+  isScrolling = setTimeout(() => {
+    if (window.scrollY < 145) {
+      return;
+    }
+    pageHeader.classList.add('hidden');
+  }, 1200);
+}
+
 /**
  * End Main Functions
  * Begin Events
@@ -93,3 +104,5 @@ document.addEventListener('scroll', setActive);
 
 const t1 = performance.now();
 console.log(`App took ${t1 - t0} milliseconds.`);
+
+document.addEventListener('scroll', hideNav);
