@@ -107,3 +107,5 @@ document.addEventListener('scroll', hideNav);
 
 const t1 = performance.now();
 console.log(`App took ${t1 - t0} milliseconds.`);
+
+document.addEventListener('scroll', hideNav);
